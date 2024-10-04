@@ -1,0 +1,20 @@
+.black-and-white {
+    filter: grayscale(100%);
+}
+body{
+background-color:white;
+}
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* Adjust the z-index as needed */
+    /* Add any other styles you want for the navbar */
+}
+
+
+.navbar:hover {
+    /* Add styles for hover effect */
+    background-color: #f4f9fa;
+    /* Change to the desired hover color */
+}

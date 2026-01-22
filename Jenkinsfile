@@ -11,19 +11,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout Code') {
-            steps {
-                checkout([
-                    $class: 'GitSCM',
-                    branches: [[name: '*/main']],
-                    userRemoteConfigs: [[
-                        url: 'git@github.com:Manyad05/Book_Stotre.git',
-                        credentialsId: 'github-ssh'
-                    ]]
-                ])
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 sh '''
@@ -61,10 +48,10 @@ pipeline {
 
     post {
         success {
-            echo "CI Pipeline completed successfully. Image pushed to ECR."
+            echo "CI pipeline completed successfully"
         }
         failure {
-            echo "CI Pipeline failed."
+            echo "CI pipeline failed"
         }
     }
 }
